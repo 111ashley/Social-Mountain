@@ -24,7 +24,7 @@ const Auth = () => {
 
         const url = 'https://socialmtn.devmountain.com'
 
-        axios.post(register ? `${url}/register` : `${url}/login`, body)
+        axios.post(`${url}/login`, body)
             .then((res) => {
                 console.log('AFTER AUTH', res.data)
                 authCtx.login(res.data.token, res.data.exp, res.data.userId)

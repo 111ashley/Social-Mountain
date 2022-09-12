@@ -21,13 +21,13 @@ module.exports = {
             err.statusCode = 500
             throw err
         }
-
+    // declaring error if it's not the token
         if (!token) {
             const error = new Error('Not authenticated.')
             error.statusCode = 401
             throw error
         }
-
+    // run the next middleware
         next()
     }
 }
